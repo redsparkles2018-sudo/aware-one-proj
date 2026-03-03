@@ -19,7 +19,8 @@
 ## Key Decisions Made
 
 - [2026-03-03] Brand name chosen: **Aware One**
-- [2026-03-03] Domains to register: `awareone.co.nz` + `awareone.nz` (both available)
+- [2026-03-03] Domains registered: `awareone.co.nz` + `awareone.nz` ✅
+- [2026-03-03] Brand locked — see BRAND.md for full spec
 - [2026-03-03] Tech stack agreed: Next.js + Tailwind + Sanity CMS + Vercel
 - [2026-03-03] Three service pillars: **Operate / Source / Build**
 - [2026-03-03] Website focus: SEO-first, blog-driven content strategy
@@ -75,12 +76,12 @@ Product design, prototyping, custom apps and AI-integrated workflows.
 
 - [x] Business concept defined
 - [x] Brand name finalised: Aware One
-- [x] Domains confirmed available
 - [x] Tech stack chosen
 - [x] Full plan written → `PLAN.md`
-- [ ] Domains registered
-- [ ] Logo designed
-- [ ] Email set up
+- [x] Domains registered: awareone.co.nz + awareone.nz ✅
+- [x] Brand locked → `BRAND.md` ✅ (colours, logo, typography, voice)
+- [ ] Logo files created (SVG/PNG) — brief designer or Figma
+- [ ] Email set up (wei@awareone.co.nz via Zoho)
 - [ ] Website copy written
 - [ ] Website built
 - [ ] Blog posts written
