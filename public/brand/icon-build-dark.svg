@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80" fill="none">
+  <title>Build — Custom Software &amp; Apps</title>
+  <rect width="80" height="80" rx="16" fill="rgba(0,169,157,0.15)"/>
+  <!-- Bottom layer -->
+  <rect x="18" y="52" width="44" height="10" rx="5" fill="rgba(255,255,255,0.06)"/>
+  <!-- Middle layer -->
+  <rect x="18" y="42" width="44" height="12" rx="5" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1.6"/>
+  <!-- Top layer — teal -->
+  <rect x="18" y="30" width="44" height="14" rx="5" fill="#00A99D"/>
+  <line x1="26" y1="36" x2="34" y2="36" stroke="white" stroke-width="2" stroke-linecap="round"/>
+  <line x1="26" y1="40" x2="40" y2="40" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+  <polyline points="50,35 54,37 50,39" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
