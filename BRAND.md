@@ -143,7 +143,7 @@ wei@awareone.co.nz
 
 ## What to Build Next
 
-- [ ] Register email: `wei@awareone.co.nz` via Zoho Mail (free)
+- [x] Contact email: `info@awareone.co.nz` (Wei Yu setting up independently)
 - [ ] Design actual logo files (SVG + PNG) — brief a designer or use Figma
 - [ ] Build website (Next.js + Tailwind — see MEMORY.md for stack)
 - [ ] Apply brand to all website components
