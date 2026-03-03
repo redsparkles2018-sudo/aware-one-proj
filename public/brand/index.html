@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aware One — Brand Assets</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root { --slate:#1E2B3C; --teal:#00A99D; --teal-l:#00C4B7; --teal-p:#EEF8F7; --gray:#6B7C93; --border:#E8EDF2; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',sans-serif; background:#F0F4F7; padding:40px 20px; color:var(--slate); }
+  .page { max-width:860px; margin:0 auto; }
+
+  .header { margin-bottom:48px; }
+  .header h1 { font-size:32px; font-weight:800; letter-spacing:-0.02em; }
+  .header h1 span { color:var(--teal); font-weight:300; }
+  .header p { color:var(--gray); font-size:13px; margin-top:6px; }
+
+  h2 { font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--gray); margin-bottom:14px; }
+
+  .section { margin-bottom:48px; }
+
+  .card { background:white; border-radius:16px; padding:36px; box-shadow:0 2px 12px rgba(30,43,60,0.07); }
+  .card.dark { background:var(--slate); }
+
+  .two-col { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .three-col { display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; }
+
+  .asset-label { font-size:11px; color:var(--gray); margin-top:14px; font-weight:500; }
+  .asset-label.light { color:rgba(255,255,255,0.35); }
+
+  /* Icon cards */
+  .icon-card { background:white; border-radius:14px; padding:28px 24px; text-align:center; box-shadow:0 1px 8px rgba(30,43,60,0.07); }
+  .icon-card img { width:80px; height:80px; }
+  .icon-card-name { font-size:13px; font-weight:700; color:var(--slate); margin-top:14px; }
+  .icon-card-desc { font-size:11px; color:var(--gray); margin-top:3px; }
+
+  /* Favicon row */
+  .row { display:flex; gap:20px; align-items:center; flex-wrap:wrap; }
+  .favicon-demo { text-align:center; }
+  .favicon-demo p { font-size:10px; color:var(--gray); margin-top:8px; font-weight:500; }
+
+  /* File list */
+  .file-list { background:white; border-radius:14px; padding:4px 20px; box-shadow:0 1px 8px rgba(30,43,60,0.07); }
+  .file-list li { list-style:none; padding:12px 0; border-bottom:1px solid var(--border); font-size:13px; display:flex; justify-content:space-between; align-items:center; gap:12px; }
+  .file-list li:last-child { border-bottom:none; }
+  .fname { font-family:monospace; font-size:12px; font-weight:700; color:var(--slate); }
+  .fdesc { color:var(--gray); font-size:12px; text-align:right; }
+
+  /* Palette */
+  .palette { display:flex; gap:12px; flex-wrap:wrap; }
+  .swatch { border-radius:10px; padding:16px 20px; min-width:130px; }
+  .swatch-name { font-size:12px; font-weight:700; }
+  .swatch-hex  { font-size:11px; font-family:monospace; opacity:0.65; margin-top:2px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <h1>AWARE <span>1</span></h1>
+    <p>Brand Assets — locked 2026-03-03 ✅</p>
+  </div>
+
+  <!-- PALETTE -->
+  <div class="section">
+    <h2>Colour Palette</h2>
+    <div class="palette">
+      <div class="swatch" style="background:#1E2B3C; color:white;">
+        <div class="swatch-name">Deep Slate</div><div class="swatch-hex">#1E2B3C</div>
+      </div>
+      <div class="swatch" style="background:#00A99D; color:white;">
+        <div class="swatch-name">Teal</div><div class="swatch-hex">#00A99D</div>
+      </div>
+      <div class="swatch" style="background:#00C4B7; color:white;">
+        <div class="swatch-name">Teal Light</div><div class="swatch-hex">#00C4B7</div>
+      </div>
+      <div class="swatch" style="background:#EEF8F7; color:#1E2B3C; border:1px solid #D4EDEB;">
+        <div class="swatch-name">Teal Pale</div><div class="swatch-hex">#EEF8F7</div>
+      </div>
+      <div class="swatch" style="background:#6B7C93; color:white;">
+        <div class="swatch-name">Slate Gray</div><div class="swatch-hex">#6B7C93</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WORDMARK -->
+  <div class="section">
+    <h2>Logo — Wordmark</h2>
+    <div class="two-col">
+      <div class="card">
+        <img src="logo-wordmark.svg" alt="Aware One wordmark" style="height:52px;">
+        <div class="asset-label">logo-wordmark.svg — light backgrounds</div>
+      </div>
+      <div class="card dark">
+        <img src="logo-white.svg" alt="Aware One white wordmark" style="height:52px;">
+        <div class="asset-label light">logo-white.svg — dark backgrounds</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMBINED -->
+  <div class="section">
+    <h2>Logo — Icon + Wordmark</h2>
+    <div class="two-col">
+      <div class="card">
+        <img src="logo-combined.svg" alt="Aware One combined" style="height:60px;">
+        <div class="asset-label">logo-combined.svg — light backgrounds</div>
+      </div>
+      <div class="card dark">
+        <img src="logo-combined-dark.svg" alt="Aware One combined dark" style="height:60px;">
+        <div class="asset-label light">logo-combined-dark.svg — dark backgrounds</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ICON SIZES -->
+  <div class="section">
+    <h2>Logo — Icon Only &amp; Favicon</h2>
+    <div class="card">
+      <div class="row">
+        <div class="favicon-demo">
+          <img src="logo-icon.svg" style="width:80px;height:80px;">
+          <p>80px</p>
+        </div>
+        <div class="favicon-demo">
+          <img src="logo-icon.svg" style="width:56px;height:56px;">
+          <p>56px</p>
+        </div>
+        <div class="favicon-demo">
+          <img src="logo-icon.svg" style="width:40px;height:40px;">
+          <p>40px</p>
+        </div>
+        <div class="favicon-demo">
+          <img src="logo-icon.svg" style="width:28px;height:28px;">
+          <p>28px</p>
+        </div>
+        <div class="favicon-demo" style="background:var(--slate);padding:12px;border-radius:10px;">
+          <img src="favicon.svg" style="width:32px;height:32px;">
+          <p style="color:rgba(255,255,255,0.4);">favicon</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOCIAL -->
+  <div class="section">
+    <h2>Social / Profile Image</h2>
+    <div class="card" style="display:inline-block; padding:20px;">
+      <img src="logo-social.svg" style="width:160px;height:160px;border-radius:10px; display:block;">
+      <div class="asset-label" style="margin-top:10px;">logo-social.svg — 400×400 — LinkedIn, profile pic</div>
+    </div>
+  </div>
+
+  <!-- SERVICE ICONS -->
+  <div class="section">
+    <h2>Service Pillar Icons</h2>
+    <div class="three-col">
+      <div class="icon-card">
+        <img src="icon-operate.svg" alt="Operate icon">
+        <div class="icon-card-name">Operate</div>
+        <div class="icon-card-desc">AI tools &amp; automation</div>
+      </div>
+      <div class="icon-card">
+        <img src="icon-source.svg" alt="Source icon">
+        <div class="icon-card-name">Source</div>
+        <div class="icon-card-desc">Global sourcing &amp; logistics</div>
+      </div>
+      <div class="icon-card">
+        <img src="icon-build.svg" alt="Build icon">
+        <div class="icon-card-name">Build</div>
+        <div class="icon-card-desc">Custom software &amp; apps</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FILE LIST -->
+  <div class="section">
+    <h2>All Files</h2>
+    <div class="file-list">
+      <ul>
+        <li><span class="fname">logo-wordmark.svg</span><span class="fdesc">Main logo — use on white/light backgrounds</span></li>
+        <li><span class="fname">logo-white.svg</span><span class="fdesc">Wordmark — use on dark/slate backgrounds</span></li>
+        <li><span class="fname">logo-combined.svg</span><span class="fdesc">Icon + wordmark lockup — light backgrounds</span></li>
+        <li><span class="fname">logo-combined-dark.svg</span><span class="fdesc">Icon + wordmark lockup — dark backgrounds</span></li>
+        <li><span class="fname">logo-icon.svg</span><span class="fdesc">A¹ icon only — scalable from 20–200px</span></li>
+        <li><span class="fname">logo-social.svg</span><span class="fdesc">400×400 profile image — LinkedIn, social</span></li>
+        <li><span class="fname">favicon.svg</span><span class="fdesc">Browser tab favicon</span></li>
+        <li><span class="fname">icon-operate.svg</span><span class="fdesc">Operate service pillar icon</span></li>
+        <li><span class="fname">icon-source.svg</span><span class="fdesc">Source service pillar icon</span></li>
+        <li><span class="fname">icon-build.svg</span><span class="fdesc">Build service pillar icon</span></li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

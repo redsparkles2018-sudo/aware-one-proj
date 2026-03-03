@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 64" width="220" height="64" role="img" aria-label="Aware One">
+  <title>Aware One</title>
+  <defs>
+    <style>
+      .logo-aware { font-family: 'Inter', system-ui, -apple-system, sans-serif; font-weight: 800; font-size: 48px; fill: #1E2B3C; letter-spacing: -0.02em; }
+      .logo-one   { font-family: 'Inter', system-ui, -apple-system, sans-serif; font-weight: 300; font-size: 48px; fill: #00A99D; letter-spacing: -0.02em; }
+    </style>
+  </defs>
+  <text class="logo-aware" x="0" y="50">AWARE</text>
+  <text class="logo-one"   x="168" y="50"> 1</text>
+</svg>

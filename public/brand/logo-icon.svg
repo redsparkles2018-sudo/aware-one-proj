@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" role="img" aria-label="Aware One icon">
+  <title>Aware One — A1 Icon</title>
+  <rect width="100" height="100" rx="20" fill="#00A99D"/>
+  <!-- A in Inter-style bold -->
+  <text
+    x="18" y="74"
+    font-family="'Inter', system-ui, -apple-system, sans-serif"
+    font-weight="800"
+    font-size="62"
+    fill="white"
+    letter-spacing="-0.03em">A</text>
+  <!-- Superscript 1 -->
+  <text
+    x="70" y="42"
+    font-family="'Inter', system-ui, -apple-system, sans-serif"
+    font-weight="600"
+    font-size="26"
+    fill="rgba(255,255,255,0.85)">1</text>
+</svg>

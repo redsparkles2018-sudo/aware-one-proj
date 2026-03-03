@@ -1,0 +1,29 @@
+<!-- Operate: AI workflow nodes — connected process, automation -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80" fill="none">
+  <title>Operate — AI &amp; Automation</title>
+  <!-- Subtle background -->
+  <rect width="80" height="80" rx="16" fill="#EEF8F7"/>
+
+  <!-- Connector lines (behind nodes) -->
+  <line x1="22" y1="40" x2="36" y2="28" stroke="#00A99D" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+  <line x1="22" y1="40" x2="36" y2="52" stroke="#00A99D" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+  <line x1="44" y1="28" x2="58" y2="40" stroke="#00A99D" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+  <line x1="44" y1="52" x2="58" y2="40" stroke="#00A99D" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+
+  <!-- Left hub node (filled teal) — the central intelligence -->
+  <circle cx="22" cy="40" r="8" fill="#00A99D"/>
+  <circle cx="22" cy="40" r="3" fill="white"/>
+
+  <!-- Right output node (filled teal) -->
+  <circle cx="58" cy="40" r="6" fill="#00A99D" opacity="0.9"/>
+
+  <!-- Top-right small node -->
+  <circle cx="40" cy="28" r="5" fill="white" stroke="#1E2B3C" stroke-width="1.8" opacity="0.6"/>
+
+  <!-- Bottom-right small node -->
+  <circle cx="40" cy="52" r="5" fill="white" stroke="#1E2B3C" stroke-width="1.8" opacity="0.6"/>
+
+  <!-- Spark / arrow on output -->
+  <line x1="54" y1="36" x2="58" y2="40" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="54" y1="44" x2="58" y2="40" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

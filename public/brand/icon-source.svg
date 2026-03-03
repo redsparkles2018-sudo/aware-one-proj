@@ -1,0 +1,26 @@
+<!-- Source: Globe with shipping path — global sourcing, Asia logistics -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80" fill="none">
+  <title>Source — Global Logistics</title>
+  <rect width="80" height="80" rx="16" fill="#EEF8F7"/>
+
+  <!-- Globe outline -->
+  <circle cx="38" cy="42" r="20" stroke="#1E2B3C" stroke-width="1.8" opacity="0.25"/>
+
+  <!-- Latitude lines -->
+  <path d="M18,42 Q38,35 58,42" stroke="#1E2B3C" stroke-width="1.4" stroke-linecap="round" opacity="0.25"/>
+  <path d="M20,50 Q38,44 56,50" stroke="#1E2B3C" stroke-width="1.4" stroke-linecap="round" opacity="0.18"/>
+
+  <!-- Centre meridian -->
+  <line x1="38" y1="22" x2="38" y2="62" stroke="#1E2B3C" stroke-width="1.4" stroke-linecap="round" opacity="0.2"/>
+
+  <!-- Curved flight/shipping path (Asia → NZ arc) -->
+  <path d="M24,36 Q44,18 58,34"
+    stroke="#00A99D" stroke-width="2" stroke-linecap="round" fill="none" stroke-dasharray="3,3"/>
+
+  <!-- Origin dot (Asia side) -->
+  <circle cx="24" cy="36" r="3.5" fill="#00A99D" opacity="0.6"/>
+
+  <!-- Destination pin (NZ side) — teal filled, prominent -->
+  <circle cx="58" cy="34" r="5" fill="#00A99D"/>
+  <circle cx="58" cy="34" r="2" fill="white"/>
+</svg>
