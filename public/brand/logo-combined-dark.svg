@@ -11,8 +11,8 @@
   </defs>
   <!-- Icon block -->
   <rect x="0" y="6" width="60" height="60" rx="12" fill="#00A99D"/>
-  <text class="lcd-icon-a" x="8" y="56">A</text>
-  <text class="lcd-icon-1" x="44" y="28">1</text>
+  <text class="lcd-icon-a" x="6" y="58">A</text>
+  <text class="lcd-icon-1" x="42" y="24">1</text>
   <!-- Wordmark -->
   <text class="lcd-name" x="80" y="40">Aware <tspan class="lcd-one">One</tspan></text>
   <text class="lcd-sub"  x="80" y="56">BUSINESS CONSULTANCY</text>

@@ -5,27 +5,29 @@
   <!-- Teal accent bar at top -->
   <rect width="400" height="10" fill="#00A99D"/>
 
-  <!-- A¹ icon block — centred -->
-  <rect x="130" y="90" width="140" height="140" rx="28" fill="#00A99D"/>
-  <!-- A text -->
+  <!-- A¹ icon block — centred, slightly larger square -->
+  <rect x="120" y="85" width="160" height="160" rx="32" fill="#00A99D"/>
+
+  <!-- A text — sized to fill square comfortably -->
   <text
-    x="148" y="208"
+    x="134" y="220"
     font-family="'Inter', system-ui, -apple-system, sans-serif"
     font-weight="800"
-    font-size="130"
+    font-size="140"
     fill="white"
     letter-spacing="-0.03em">A</text>
-  <!-- Superscript 1 -->
+
+  <!-- Superscript 1 — anchored inside square top-right -->
   <text
-    x="258" y="128"
+    x="238" y="130"
     font-family="'Inter', system-ui, -apple-system, sans-serif"
     font-weight="600"
-    font-size="52"
-    fill="rgba(255,255,255,0.85)">1</text>
+    font-size="46"
+    fill="rgba(255,255,255,0.9)">1</text>
 
   <!-- Wordmark below icon -->
   <text
-    x="200" y="300"
+    x="200" y="310"
     text-anchor="middle"
     font-family="'Inter', system-ui, -apple-system, sans-serif"
     font-weight="800"
@@ -33,11 +35,11 @@
     fill="white"
     letter-spacing="-0.02em">AWARE</text>
   <text
-    x="200" y="350"
+    x="200" y="358"
     text-anchor="middle"
     font-family="'Inter', system-ui, -apple-system, sans-serif"
     font-weight="300"
-    font-size="40"
+    font-size="38"
     fill="#00C4B7"
-    letter-spacing="0.18em">ONE</text>
+    letter-spacing="0.2em">ONE</text>
 </svg>
