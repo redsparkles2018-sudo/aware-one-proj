@@ -7,208 +7,141 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root {
-    --teal:     #00A99D;
-    --teal-l:   #00C4B7;
-
-    --bg:       #ffffff;
-    --bg-soft:  #F8FAFB;
-    --bg-card:  #ffffff;
-    --text:     #1E2B3C;
-    --text-2:   #6B7C93;
-    --border:   #E8EDF2;
-    --teal-p:   #EEF8F7;
-    --nav-bg:   rgba(255,255,255,0.92);
-    --shadow:   0 4px 24px rgba(30,43,60,0.08);
-    --cta-bg:   #1E2B3C;
-    --foot-bg:  #0D1620;
+    --teal:    #00A99D;
+    --teal-l:  #00C4B7;
+    --bg:      #ffffff; --bg-soft:#F8FAFB; --bg-card:#ffffff;
+    --text:    #1E2B3C; --text-2: #6B7C93;
+    --border:  #E8EDF2; --teal-p: #EEF8F7;
+    --nav-bg:  rgba(255,255,255,0.92);
+    --shadow:  0 4px 24px rgba(30,43,60,0.08);
+    --cta-bg:  #1E2B3C; --foot-bg:#0D1620;
   }
   [data-theme="dark"] {
-    --bg:       #0D1520;
-    --bg-soft:  #111D2C;
-    --bg-card:  #172030;
-    --text:     #EDF2F7;
-    --text-2:   #7A90AA;
-    --border:   rgba(255,255,255,0.07);
-    --teal-p:   rgba(0,169,157,0.13);
-    --nav-bg:   rgba(13,21,32,0.94);
-    --shadow:   0 4px 28px rgba(0,0,0,0.4);
-    --cta-bg:   #090F1A;
-    --foot-bg:  #070D18;
+    --bg:      #0D1520; --bg-soft:#111D2C; --bg-card:#172030;
+    --text:    #EDF2F7; --text-2: #7A90AA;
+    --border:  rgba(255,255,255,0.07); --teal-p: rgba(0,169,157,0.13);
+    --nav-bg:  rgba(13,21,32,0.94);
+    --shadow:  0 4px 28px rgba(0,0,0,0.4);
+    --cta-bg:  #090F1A; --foot-bg:#070D18;
   }
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;transition:background .3s,color .3s;}
+  a{text-decoration:none;color:inherit;}
 
-  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-  html { scroll-behavior:smooth; }
-  body {
-    font-family:'Inter', system-ui, sans-serif;
-    color:var(--text); background:var(--bg);
-    -webkit-font-smoothing:antialiased;
-    transition:background 0.3s, color 0.3s;
-  }
-  a { text-decoration:none; color:inherit; }
+  /* NAV */
+  nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+  .nav-logo img{height:34px;display:block;}
+  .nav-links{display:flex;gap:28px;}
+  .nav-links a{font-size:14px;font-weight:500;color:var(--text-2);transition:color .2s;}
+  .nav-links a:hover{color:var(--text);}
+  .nav-right{display:flex;align-items:center;gap:10px;}
+  @media(max-width:640px){.nav-links{display:none;}}
+  .theme-toggle{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:var(--bg-card);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;transition:all .2s;flex-shrink:0;}
+  .theme-toggle:hover{border-color:var(--teal);}
+  .btn{display:inline-block;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;white-space:nowrap;}
+  .btn-primary{background:var(--teal);color:white;}
+  .btn-primary:hover{background:var(--teal-l);transform:translateY(-1px);}
+  .btn-ghost{border:1.5px solid var(--border);color:var(--text);background:transparent;}
+  .btn-ghost:hover{border-color:var(--teal);color:var(--teal);}
 
-  /* ── NAV ── */
-  nav {
-    position:sticky; top:0; z-index:100;
-    background:var(--nav-bg); backdrop-filter:blur(14px);
-    border-bottom:1px solid var(--border);
-    padding:0 24px; height:64px;
-    display:flex; align-items:center; justify-content:space-between; gap:16px;
-  }
-  .nav-logo img { height:34px; display:block; }
-  .nav-links { display:flex; gap:28px; }
-  .nav-links a { font-size:14px; font-weight:500; color:var(--text-2); transition:color 0.2s; }
-  .nav-links a:hover { color:var(--text); }
-  .nav-right { display:flex; align-items:center; gap:10px; }
-  @media(max-width:640px) { .nav-links { display:none; } }
+  /* HERO */
+  .hero{padding:80px 24px 72px;max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center;}
+  @media(max-width:800px){.hero{grid-template-columns:1fr;gap:40px;padding:52px 20px 48px;}}
+  .hero-tag{display:inline-flex;align-items:center;gap:8px;background:var(--teal-p);border:1px solid rgba(0,169,157,0.25);border-radius:99px;padding:5px 14px;font-size:11px;font-weight:700;color:var(--teal);letter-spacing:.06em;text-transform:uppercase;margin-bottom:24px;}
+  .hero-tag-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);}
+  .hero h1{font-size:clamp(34px,5.5vw,56px);font-weight:800;line-height:1.07;letter-spacing:-.03em;margin-bottom:20px;}
+  .hero h1 em{color:var(--teal);font-style:normal;}
+  .hero-sub{font-size:clamp(15px,2vw,17px);line-height:1.75;color:var(--text-2);margin-bottom:32px;}
+  .hero-actions{display:flex;gap:10px;flex-wrap:wrap;}
+  .hero-actions .btn{padding:13px 26px;font-size:15px;}
+  .hero-note{font-size:13px;color:var(--text-2);margin-top:14px;}
+  .hero-note strong{color:var(--teal);font-weight:600;}
 
-  .theme-toggle {
-    width:36px; height:36px; border-radius:8px;
-    border:1px solid var(--border); background:var(--bg-card);
-    cursor:pointer; display:flex; align-items:center; justify-content:center;
-    font-size:16px; transition:all 0.2s; flex-shrink:0;
-  }
-  .theme-toggle:hover { border-color:var(--teal); }
+  .hero-visual{background:var(--bg-soft);border:1px solid var(--border);border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden;}
+  .hero-visual::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal),var(--teal-l));}
+  .stat-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;display:flex;align-items:center;gap:14px;box-shadow:var(--shadow);}
+  .stat-icon{width:40px;height:40px;border-radius:10px;overflow:hidden;flex-shrink:0;}
+  .stat-icon img{width:40px;height:40px;display:block;}
+  .stat-label{font-size:11px;color:var(--text-2);font-weight:500;}
+  .stat-value{font-size:18px;font-weight:800;letter-spacing:-.02em;margin-top:2px;}
+  .stat-value span{color:var(--teal);}
 
-  .btn { display:inline-block; padding:10px 20px; border-radius:8px; font-size:14px; font-weight:600; cursor:pointer; transition:all 0.2s; white-space:nowrap; }
-  .btn-primary { background:var(--teal); color:white; }
-  .btn-primary:hover { background:var(--teal-l); transform:translateY(-1px); }
-  .btn-ghost { border:1.5px solid var(--border); color:var(--text); background:transparent; }
-  .btn-ghost:hover { border-color:var(--teal); color:var(--teal); }
+  /* TRUST BAR */
+  .trust-bar{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg-soft);padding:22px 24px;display:flex;align-items:center;justify-content:center;gap:14px 40px;flex-wrap:wrap;}
+  .trust-item{display:flex;align-items:center;gap:10px;}
+  .trust-icon{font-size:18px;}
+  .trust-text{font-size:13px;font-weight:600;}
+  .trust-sub{font-size:11px;color:var(--text-2);}
 
-  /* ── HERO ── */
-  .hero {
-    padding:80px 24px 72px; max-width:1120px; margin:0 auto;
-    display:grid; grid-template-columns:1fr 1fr; gap:52px; align-items:center;
-  }
-  @media(max-width:800px) { .hero { grid-template-columns:1fr; gap:40px; padding:52px 20px 48px; } }
+  /* PAIN INTRO */
+  .pain-intro{padding:80px 24px 0;max-width:1120px;margin:0 auto;text-align:center;}
+  .pain-intro .section-tag{display:inline-block;margin-bottom:12px;}
+  .pain-intro h2{font-size:clamp(26px,4.5vw,40px);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin-bottom:16px;}
+  .pain-intro p{font-size:clamp(14px,2vw,17px);line-height:1.75;color:var(--text-2);max-width:640px;margin:0 auto;}
 
-  .hero-tag {
-    display:inline-flex; align-items:center; gap:8px;
-    background:var(--teal-p); border:1px solid rgba(0,169,157,0.25);
-    border-radius:99px; padding:5px 14px;
-    font-size:11px; font-weight:700; color:var(--teal);
-    letter-spacing:0.06em; text-transform:uppercase; margin-bottom:24px;
-  }
-  .hero-tag-dot { width:6px; height:6px; border-radius:50%; background:var(--teal); }
+  /* SERVICES */
+  .services{padding:56px 24px 88px;max-width:1120px;margin:0 auto;}
+  .section-tag{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:12px;}
+  .section-h{font-size:clamp(24px,4vw,36px);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin-bottom:10px;}
+  .section-sub{font-size:clamp(13px,1.8vw,15px);line-height:1.75;color:var(--text-2);max-width:520px;margin-bottom:40px;}
 
-  .hero h1 {
-    font-size:clamp(36px, 5.5vw, 56px);
-    font-weight:800; line-height:1.07; letter-spacing:-0.03em; margin-bottom:20px;
-  }
-  .hero h1 em { color:var(--teal); font-style:normal; }
+  .service-card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:36px 28px;margin-bottom:20px;transition:all .25s;position:relative;overflow:hidden;}
+  .service-card::after{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:var(--teal);transform:scaleY(0);transform-origin:top;transition:transform .3s;}
+  .service-card:hover{box-shadow:var(--shadow);transform:translateY(-2px);}
+  .service-card:hover::after{transform:scaleY(1);}
 
-  .hero-sub { font-size:clamp(15px, 2vw, 17px); line-height:1.75; color:var(--text-2); margin-bottom:32px; }
+  .service-head{display:flex;align-items:center;gap:18px;margin-bottom:20px;}
+  .service-icon{width:56px;height:56px;flex-shrink:0;}
+  .service-name{font-size:22px;font-weight:800;letter-spacing:-.02em;}
+  .service-tagline{font-size:13px;color:var(--text-2);font-weight:500;margin-top:3px;}
 
-  .hero-actions { display:flex; gap:10px; flex-wrap:wrap; }
-  .hero-actions .btn { padding:13px 26px; font-size:15px; }
-  .hero-note { font-size:13px; color:var(--text-2); margin-top:14px; }
-  .hero-note strong { color:var(--teal); font-weight:600; }
+  .service-body{display:grid;grid-template-columns:1fr 1fr;gap:28px 40px;}
+  @media(max-width:640px){.service-body{grid-template-columns:1fr;}}
 
-  /* Hero visual */
-  .hero-visual {
-    background:var(--bg-soft); border:1px solid var(--border);
-    border-radius:20px; padding:28px;
-    display:flex; flex-direction:column; gap:14px;
-    position:relative; overflow:hidden;
-  }
-  .hero-visual::before {
-    content:''; position:absolute; top:0; left:0; right:0; height:3px;
-    background:linear-gradient(90deg, var(--teal), var(--teal-l));
-  }
-  .stat-card {
-    background:var(--bg-card); border:1px solid var(--border);
-    border-radius:12px; padding:16px 18px;
-    display:flex; align-items:center; gap:14px; box-shadow:var(--shadow);
-  }
-  .stat-icon { width:40px; height:40px; border-radius:10px; overflow:hidden; flex-shrink:0; }
-  .stat-icon img { width:40px; height:40px; display:block; }
-  .stat-label { font-size:11px; color:var(--text-2); font-weight:500; }
-  .stat-value { font-size:18px; font-weight:800; letter-spacing:-0.02em; margin-top:2px; }
-  .stat-value span { color:var(--teal); }
+  .service-pain h4{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;}
+  .pain-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+  .pain-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text-2);line-height:1.5;}
+  .pain-list li::before{content:'✗';color:#EF6C6C;font-size:12px;font-weight:700;flex-shrink:0;margin-top:1px;}
 
-  /* ── TRUST BAR ── */
-  .trust-bar {
-    border-top:1px solid var(--border); border-bottom:1px solid var(--border);
-    background:var(--bg-soft); padding:22px 24px;
-    display:flex; align-items:center; justify-content:center;
-    gap:14px 40px; flex-wrap:wrap;
-  }
-  .trust-item { display:flex; align-items:center; gap:10px; }
-  .trust-icon { font-size:18px; }
-  .trust-text { font-size:13px; font-weight:600; }
-  .trust-sub  { font-size:11px; color:var(--text-2); }
+  .service-solve h4{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;}
+  .solve-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+  .solve-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text-2);line-height:1.5;}
+  .solve-list li::before{content:'✓';color:var(--teal);font-size:12px;font-weight:700;flex-shrink:0;margin-top:1px;}
 
-  /* ── SERVICES ── */
-  .services { padding:88px 24px; max-width:1120px; margin:0 auto; }
-  .section-tag { font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--teal); margin-bottom:12px; }
-  .section-h { font-size:clamp(26px, 4.5vw, 40px); font-weight:800; letter-spacing:-0.02em; line-height:1.15; margin-bottom:14px; }
-  .section-sub { font-size:clamp(14px, 2vw, 16px); line-height:1.75; color:var(--text-2); max-width:520px; margin-bottom:48px; }
+  .service-link{display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--teal);margin-top:24px;}
+  .service-link::after{content:'→';transition:transform .2s;}
+  .service-link:hover::after{transform:translateX(3px);}
 
-  .services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
-  @media(max-width:860px) { .services-grid { grid-template-columns:1fr 1fr; } }
-  @media(max-width:540px) { .services-grid { grid-template-columns:1fr; } }
+  /* WHY */
+  .why{background:var(--bg-soft);padding:88px 24px;}
+  .why-inner{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+  @media(max-width:800px){.why-inner{grid-template-columns:1fr;gap:40px;}}
+  .why h2{font-size:clamp(26px,4.5vw,40px);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin-bottom:18px;}
+  .why h2 em{color:var(--teal);font-style:normal;}
+  .why p{font-size:15px;line-height:1.75;color:var(--text-2);margin-bottom:14px;}
+  .why-points{display:flex;flex-direction:column;gap:22px;}
+  .why-point{display:flex;gap:14px;align-items:flex-start;}
+  .why-num{width:30px;height:30px;border-radius:8px;flex-shrink:0;margin-top:2px;background:var(--teal);color:white;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;}
+  .why-point-text h4{font-size:14px;font-weight:700;margin-bottom:4px;}
+  .why-point-text p{font-size:13px;color:var(--text-2);line-height:1.65;margin:0;}
 
-  .service-card {
-    background:var(--bg-card); border:1px solid var(--border);
-    border-radius:16px; padding:28px 24px;
-    transition:all 0.25s; position:relative; overflow:hidden;
-  }
-  .service-card::after {
-    content:''; position:absolute; bottom:0; left:0; right:0; height:3px;
-    background:var(--teal); transform:scaleX(0); transform-origin:left; transition:transform 0.3s;
-  }
-  .service-card:hover { box-shadow:var(--shadow); transform:translateY(-3px); }
-  .service-card:hover::after { transform:scaleX(1); }
-  .service-icon { width:56px; height:56px; margin-bottom:20px; display:block; }
-  .service-name { font-size:20px; font-weight:800; margin-bottom:10px; letter-spacing:-0.01em; }
-  .service-desc { font-size:14px; line-height:1.65; color:var(--text-2); margin-bottom:20px; }
-  .service-features { list-style:none; display:flex; flex-direction:column; gap:7px; }
-  .service-features li { display:flex; align-items:center; gap:9px; font-size:13px; color:var(--text-2); }
-  .service-features li::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--teal); flex-shrink:0; }
-  .service-link { display:inline-flex; align-items:center; gap:5px; font-size:13px; font-weight:700; color:var(--teal); margin-top:22px; }
-  .service-link::after { content:'→'; transition:transform 0.2s; }
-  .service-link:hover::after { transform:translateX(3px); }
+  /* CTA */
+  .cta-banner{background:var(--cta-bg);padding:88px 24px;text-align:center;}
+  .cta-banner h2{font-size:clamp(28px,5.5vw,46px);font-weight:800;letter-spacing:-.02em;color:white;margin-bottom:14px;line-height:1.08;}
+  .cta-banner h2 em{color:var(--teal-l);font-style:normal;}
+  .cta-banner p{font-size:clamp(14px,2vw,17px);color:rgba(255,255,255,.45);margin-bottom:36px;max-width:440px;margin-left:auto;margin-right:auto;}
+  .cta-banner .btn-primary{padding:15px 34px;font-size:15px;}
+  .cta-contact{font-size:13px;color:rgba(255,255,255,.3);margin-top:16px;}
+  .cta-contact a{color:rgba(255,255,255,.55);text-decoration:underline;}
 
-  /* ── WHY ── */
-  .why { background:var(--bg-soft); padding:88px 24px; }
-  .why-inner {
-    max-width:1120px; margin:0 auto;
-    display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start;
-  }
-  @media(max-width:800px) { .why-inner { grid-template-columns:1fr; gap:40px; } }
-  .why h2 { font-size:clamp(26px, 4.5vw, 40px); font-weight:800; letter-spacing:-0.02em; line-height:1.15; margin-bottom:18px; }
-  .why h2 em { color:var(--teal); font-style:normal; }
-  .why p { font-size:15px; line-height:1.75; color:var(--text-2); margin-bottom:14px; }
-  .why-points { display:flex; flex-direction:column; gap:22px; }
-  .why-point { display:flex; gap:14px; align-items:flex-start; }
-  .why-num {
-    width:30px; height:30px; border-radius:8px; flex-shrink:0; margin-top:2px;
-    background:var(--teal); color:white; font-size:13px; font-weight:800;
-    display:flex; align-items:center; justify-content:center;
-  }
-  .why-point-text h4 { font-size:14px; font-weight:700; margin-bottom:4px; }
-  .why-point-text p  { font-size:13px; color:var(--text-2); line-height:1.65; margin:0; }
-
-  /* ── CTA ── */
-  .cta-banner { background:var(--cta-bg); padding:88px 24px; text-align:center; }
-  .cta-banner h2 { font-size:clamp(28px, 5.5vw, 46px); font-weight:800; letter-spacing:-0.02em; color:white; margin-bottom:14px; line-height:1.08; }
-  .cta-banner h2 em { color:var(--teal-l); font-style:normal; }
-  .cta-banner p { font-size:clamp(14px, 2vw, 17px); color:rgba(255,255,255,0.45); margin-bottom:36px; max-width:440px; margin-left:auto; margin-right:auto; }
-  .cta-banner .btn-primary { padding:15px 34px; font-size:15px; }
-  .cta-contact { font-size:13px; color:rgba(255,255,255,0.3); margin-top:16px; }
-  .cta-contact a { color:rgba(255,255,255,0.55); text-decoration:underline; }
-
-  /* ── FOOTER ── */
-  footer {
-    background:var(--foot-bg); padding:36px 24px;
-    display:flex; align-items:center; justify-content:space-between;
-    flex-wrap:wrap; gap:16px; border-top:1px solid rgba(255,255,255,0.05);
-  }
-  footer img { height:26px; filter:brightness(0) invert(1); opacity:0.45; display:block; }
-  .footer-links { display:flex; gap:24px; flex-wrap:wrap; }
-  .footer-links a { font-size:12px; color:rgba(255,255,255,0.3); transition:color 0.2s; }
-  .footer-links a:hover { color:rgba(255,255,255,0.7); }
-  .footer-copy { font-size:11px; color:rgba(255,255,255,0.2); }
+  /* FOOTER */
+  footer{background:var(--foot-bg);padding:36px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;border-top:1px solid rgba(255,255,255,.05);}
+  footer img{height:26px;filter:brightness(0) invert(1);opacity:.45;display:block;}
+  .footer-links{display:flex;gap:24px;flex-wrap:wrap;}
+  .footer-links a{font-size:12px;color:rgba(255,255,255,.3);transition:color .2s;}
+  .footer-links a:hover{color:rgba(255,255,255,.7);}
+  .footer-copy{font-size:11px;color:rgba(255,255,255,.2);}
 </style>
 </head>
 <body>
@@ -216,11 +149,7 @@
 <!-- NAV -->
 <nav>
   <div class="nav-logo">
-    <img id="navLogo"
-      src="brand/logo-combined-dark.svg"
-      data-light="brand/logo-combined.svg"
-      data-dark="brand/logo-combined-dark.svg"
-      alt="Aware One">
+    <img id="navLogo" src="brand/logo-combined-dark.svg" data-light="brand/logo-combined.svg" data-dark="brand/logo-combined-dark.svg" alt="Aware One">
   </div>
   <div class="nav-links">
     <a href="#services">Services</a>
@@ -238,13 +167,13 @@
   <div class="hero">
     <div>
       <div class="hero-tag"><span class="hero-tag-dot"></span>NZ Business Consultancy</div>
-      <h1>One partner.<br><em>Every advantage.</em></h1>
-      <p class="hero-sub">Aware One helps New Zealand businesses run leaner with AI, source smarter from Asia, and build software that actually fits the way you work.</p>
+      <h1>One partner for <em>everything</em> holding your business back.</h1>
+      <p class="hero-sub">Too many systems that don't connect. Suppliers that let you down. Software that costs a fortune and still doesn't fit. Aware One finds the gaps, fixes the mess, and builds what you need to grow.</p>
       <div class="hero-actions">
         <a href="#contact" class="btn btn-primary">Book a free call</a>
-        <a href="#services" class="btn btn-ghost">Our services</a>
+        <a href="#services" class="btn btn-ghost">See our services</a>
       </div>
-      <p class="hero-note">Free 30-min strategy call. <strong>No obligation.</strong></p>
+      <p class="hero-note">Free 30-min strategy session. <strong>No obligation.</strong></p>
     </div>
     <div class="hero-visual">
       <div class="stat-card">
@@ -252,8 +181,8 @@
           <img class="theme-icon" src="brand/icon-operate-dark.svg" data-light="brand/icon-operate.svg" data-dark="brand/icon-operate-dark.svg" alt="">
         </div>
         <div>
-          <div class="stat-label">Operate — AI Automation</div>
-          <div class="stat-value">40<span>%</span> less admin time</div>
+          <div class="stat-label">Operate — Systems & Automation</div>
+          <div class="stat-value">Cut overhead, <span>not staff</span></div>
         </div>
       </div>
       <div class="stat-card">
@@ -261,8 +190,8 @@
           <img class="theme-icon" src="brand/icon-source-dark.svg" data-light="brand/icon-source.svg" data-dark="brand/icon-source-dark.svg" alt="">
         </div>
         <div>
-          <div class="stat-label">Source — Global Logistics</div>
-          <div class="stat-value">Asia suppliers <span>in weeks</span></div>
+          <div class="stat-label">Source — Global Supply Chain</div>
+          <div class="stat-value">Asia suppliers <span>you can trust</span></div>
         </div>
       </div>
       <div class="stat-card">
@@ -270,8 +199,8 @@
           <img class="theme-icon" src="brand/icon-build-dark.svg" data-light="brand/icon-build.svg" data-dark="brand/icon-build-dark.svg" alt="">
         </div>
         <div>
-          <div class="stat-label">Build — Custom Software</div>
-          <div class="stat-value">10<span>×</span> faster than agencies</div>
+          <div class="stat-label">Build — Tools & Campaigns</div>
+          <div class="stat-value">Scale <span>without hiring</span></div>
         </div>
       </div>
     </div>
@@ -290,62 +219,132 @@
   </div>
   <div class="trust-item">
     <span class="trust-icon">🤖</span>
-    <div><div class="trust-text">AI-first approach</div><div class="trust-sub">Latest tools, real results</div></div>
+    <div><div class="trust-text">AI-first approach</div><div class="trust-sub">Automation that actually works</div></div>
   </div>
   <div class="trust-item">
     <span class="trust-icon">⚡</span>
-    <div><div class="trust-text">Fast turnaround</div><div class="trust-sub">Start in days, not months</div></div>
+    <div><div class="trust-text">Fast to implement</div><div class="trust-sub">Results in weeks, not months</div></div>
   </div>
+</div>
+
+<!-- SERVICES INTRO -->
+<div class="pain-intro">
+  <div class="section-tag">What we fix</div>
+  <h2>Growing a business is hard.<br>It doesn't have to be <em>this</em> hard.</h2>
+  <p>Most NZ small businesses are held back by the same three problems. We've built our entire practice around solving them.</p>
 </div>
 
 <!-- SERVICES -->
 <section id="services">
   <div class="services">
-    <div class="section-tag">What we do</div>
-    <h2 class="section-h">Three ways we give<br>your business an edge</h2>
-    <p class="section-sub">Most businesses need the same things: run better, buy smarter, build faster. We deliver all three.</p>
-    <div class="services-grid">
 
-      <div class="service-card">
+    <!-- OPERATE -->
+    <div class="service-card">
+      <div class="service-head">
         <img class="service-icon theme-icon" src="brand/icon-operate-dark.svg" data-light="brand/icon-operate.svg" data-dark="brand/icon-operate-dark.svg" alt="Operate">
-        <div class="service-name">Operate</div>
-        <p class="service-desc">Stop drowning in repetitive work. We identify what AI can automate and implement tools your team will actually use.</p>
-        <ul class="service-features">
-          <li>AI workflow automation</li>
-          <li>Process mapping & optimisation</li>
-          <li>Tool selection & setup</li>
-          <li>Team training & adoption</li>
-        </ul>
-        <a class="service-link" href="#contact">Learn more</a>
+        <div>
+          <div class="service-name">Operate</div>
+          <div class="service-tagline">Systems, automation & operations</div>
+        </div>
       </div>
-
-      <div class="service-card">
-        <img class="service-icon theme-icon" src="brand/icon-source-dark.svg" data-light="brand/icon-source.svg" data-dark="brand/icon-source-dark.svg" alt="Source">
-        <div class="service-name">Source</div>
-        <p class="service-desc">Access manufacturers in China and Asia — without the guesswork, dodgy middlemen, or freight surprises.</p>
-        <ul class="service-features">
-          <li>Supplier identification & vetting</li>
-          <li>Price negotiation</li>
-          <li>Quality control & inspections</li>
-          <li>Freight & customs coordination</li>
-        </ul>
-        <a class="service-link" href="#contact">Learn more</a>
+      <div class="service-body">
+        <div class="service-pain">
+          <h4>The problem</h4>
+          <ul class="pain-list">
+            <li>8+ disconnected tools that don't talk to each other</li>
+            <li>Staff copying data between systems by hand, every day</li>
+            <li>Paying for software half your team doesn't use</li>
+            <li>Every small change needs a developer or consultant</li>
+            <li>Scaling means hiring more people, not working smarter</li>
+            <li>No visibility — you're running blind without real data</li>
+          </ul>
+        </div>
+        <div class="service-solve">
+          <h4>What we do</h4>
+          <ul class="solve-list">
+            <li>Full tech stack audit — find what's costing you money</li>
+            <li>Connect your systems so data flows automatically</li>
+            <li>Build AI automation for your most repetitive workflows</li>
+            <li>Create clear dashboards so you always know where you stand</li>
+            <li>Document processes so anyone can follow them</li>
+            <li>Reduce operational costs without cutting your team</li>
+          </ul>
+        </div>
       </div>
-
-      <div class="service-card">
-        <img class="service-icon theme-icon" src="brand/icon-build-dark.svg" data-light="brand/icon-build.svg" data-dark="brand/icon-build-dark.svg" alt="Build">
-        <div class="service-name">Build</div>
-        <p class="service-desc">Off-the-shelf software never quite fits. We design and build apps and AI-integrated systems that do exactly what you need.</p>
-        <ul class="service-features">
-          <li>Custom web & mobile apps</li>
-          <li>AI-integrated workflows</li>
-          <li>Product design & prototyping</li>
-          <li>Ongoing support & iteration</li>
-        </ul>
-        <a class="service-link" href="#contact">Learn more</a>
-      </div>
-
+      <a class="service-link" href="#contact">Talk to us about Operate</a>
     </div>
+
+    <!-- SOURCE -->
+    <div class="service-card">
+      <div class="service-head">
+        <img class="service-icon theme-icon" src="brand/icon-source-dark.svg" data-light="brand/icon-source.svg" data-dark="brand/icon-source-dark.svg" alt="Source">
+        <div>
+          <div class="service-name">Source</div>
+          <div class="service-tagline">Global procurement & supply chain</div>
+        </div>
+      </div>
+      <div class="service-body">
+        <div class="service-pain">
+          <h4>The problem</h4>
+          <ul class="pain-list">
+            <li>Can't verify if a supplier is legitimate from 10,000km away</li>
+            <li>Minimum order quantities too high for a small business</li>
+            <li>Quality issues you only discover after the shipment arrives</li>
+            <li>Hidden costs in freight, customs, and compliance</li>
+            <li>Language and time zone barriers slow everything down</li>
+            <li>One bad supplier can wipe out months of profit</li>
+          </ul>
+        </div>
+        <div class="service-solve">
+          <h4>What we do</h4>
+          <ul class="solve-list">
+            <li>Research and shortlist verified suppliers across Asia</li>
+            <li>Negotiate MOQs and pricing on your behalf</li>
+            <li>Run quality control and factory checks before shipment</li>
+            <li>Manage freight, customs clearance and NZ compliance</li>
+            <li>Bridge the language gap — we speak Mandarin</li>
+            <li>Ongoing supplier management so you're never stuck</li>
+          </ul>
+        </div>
+      </div>
+      <a class="service-link" href="#contact">Talk to us about Source</a>
+    </div>
+
+    <!-- BUILD -->
+    <div class="service-card">
+      <div class="service-head">
+        <img class="service-icon theme-icon" src="brand/icon-build-dark.svg" data-light="brand/icon-build.svg" data-dark="brand/icon-build-dark.svg" alt="Build">
+        <div>
+          <div class="service-name">Build</div>
+          <div class="service-tagline">Software, AI agents & marketing</div>
+        </div>
+      </div>
+      <div class="service-body">
+        <div class="service-pain">
+          <h4>The problem</h4>
+          <ul class="pain-list">
+            <li>Agencies charge $30–80k and take 6 months to deliver</li>
+            <li>Off-the-shelf tools sort-of work but never quite fit</li>
+            <li>You'd need a dev, a marketer, an SEO specialist and a designer</li>
+            <li>AI tools exist but nobody has time to set them up properly</li>
+            <li>Your website is slow, outdated, and invisible on Google</li>
+          </ul>
+        </div>
+        <div class="service-solve">
+          <h4>What we build for you</h4>
+          <ul class="solve-list">
+            <li>AI agents — customer service, lead qualification, internal ops</li>
+            <li>Custom workflows using MCP, APIs and cloud integrations</li>
+            <li>Business apps — CRMs, portals, inventory, booking systems</li>
+            <li>SEO-optimised websites that rank and convert</li>
+            <li>Branding, marketing campaigns and content systems</li>
+            <li>Everything an SMB needs to scale — without a full team</li>
+          </ul>
+        </div>
+      </div>
+      <a class="service-link" href="#contact">Talk to us about Build</a>
+    </div>
+
   </div>
 </section>
 
@@ -355,29 +354,29 @@
     <div>
       <div class="section-tag">Why Aware One</div>
       <h2>One partner.<br>No hand-offs.<br><em>Real results.</em></h2>
-      <p>Most businesses juggle a marketing agency, a software dev, a logistics broker, and a business coach. That's four relationships, four invoices, four teams pointing fingers when things go wrong.</p>
-      <p>Aware One is different. We cover all three pillars — and we stay until the job is done.</p>
+      <p>Most businesses bounce between a tech consultant, a logistics broker, a software agency, and a marketing team. Four relationships. Four invoices. And four different people pointing fingers when something goes wrong.</p>
+      <p>Aware One covers all three pillars under one roof — and we stay until the job is done.</p>
     </div>
     <div class="why-points">
       <div class="why-point">
         <div class="why-num">1</div>
         <div class="why-point-text">
-          <h4>We start with your goals, not our services</h4>
-          <p>Every engagement starts with a free strategy call. We diagnose before we prescribe — and only take on work we know we can deliver.</p>
+          <h4>We diagnose before we prescribe</h4>
+          <p>Every engagement starts with a free strategy call. We find out what's actually broken before recommending anything — and only take on work we know we can deliver.</p>
         </div>
       </div>
       <div class="why-point">
         <div class="why-num">2</div>
         <div class="why-point-text">
           <h4>We move fast</h4>
-          <p>No six-month waiting lists. No endless discovery phases. We get started in days and show results in weeks.</p>
+          <p>No six-month waiting lists. No endless discovery phases. We get started within days and show measurable results within weeks.</p>
         </div>
       </div>
       <div class="why-point">
         <div class="why-num">3</div>
         <div class="why-point-text">
-          <h4>NZ business, global network</h4>
-          <p>Based in Auckland, with supply chain connections across China, Vietnam, and Taiwan — and world-class software capability.</p>
+          <h4>NZ business, global reach</h4>
+          <p>We're based in Auckland, speak Mandarin, and have active supplier networks across China, Vietnam and Taiwan — plus world-class software capability.</p>
         </div>
       </div>
     </div>
@@ -386,10 +385,10 @@
 
 <!-- CTA -->
 <section id="contact" class="cta-banner">
-  <h2>Ready to get<br>the <em>advantage</em>?</h2>
-  <p>Book a free 30-minute call. No sales pitch — just an honest conversation about what your business needs.</p>
+  <h2>Ready to fix it <em>once</em>?</h2>
+  <p>Book a free 30-minute strategy call. No pitch — just an honest look at what's holding your business back and what we can do about it.</p>
   <a href="mailto:info@awareone.co.nz?subject=Free strategy call" class="btn btn-primary">Book a free call</a>
-  <div class="cta-contact">Or email: <a href="mailto:info@awareone.co.nz">info@awareone.co.nz</a></div>
+  <div class="cta-contact">Or email us: <a href="mailto:info@awareone.co.nz">info@awareone.co.nz</a></div>
 </section>
 
 <!-- FOOTER -->
@@ -404,25 +403,17 @@
 </footer>
 
 <script>
-  function applyTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    document.getElementById('themeBtn').textContent = theme === 'dark' ? '☀️' : '🌙';
-    // Swap all theme-aware images
-    document.querySelectorAll('.theme-icon, #navLogo').forEach(img => {
-      img.src = img.dataset[theme];
-    });
+  function applyTheme(t) {
+    document.documentElement.setAttribute('data-theme', t);
+    document.getElementById('themeBtn').textContent = t === 'dark' ? '☀️' : '🌙';
+    document.querySelectorAll('.theme-icon, #navLogo').forEach(img => { img.src = img.dataset[t]; });
   }
-
   function toggleTheme() {
-    const current = document.documentElement.getAttribute('data-theme');
-    const next    = current === 'dark' ? 'light' : 'dark';
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
     localStorage.setItem('theme', next);
     applyTheme(next);
   }
-
-  // On load: use saved preference, otherwise dark
-  const saved = localStorage.getItem('theme') || 'dark';
-  applyTheme(saved);
+  applyTheme(localStorage.getItem('theme') || 'dark');
 </script>
 </body>
 </html>
