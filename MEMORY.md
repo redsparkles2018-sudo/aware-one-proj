@@ -38,7 +38,7 @@
 
 | Layer | Choice |
 |-------|--------|
-| Framework | **Next.js 14** (App Router) |
+| Framework | **Next.js 16** (App Router) |
 | Styling | **Tailwind CSS** |
 | CMS | **Sanity** (blog + content) |
 | Hosting | **Vercel** (free tier) |
@@ -177,13 +177,17 @@ Specifically update:
 - [2026-03-03] Contact email: info@awareone.co.nz (Wei Yu setting up)
 - [2026-03-03] Homepage copy locked — Mission Control concept is the big idea
 - [2026-03-03] Detailed pillar copy saved in `content/pillars/` for individual landing pages
+- [2026-03-05] Sanity CMS configured — project ID `tw557kag`, dataset `production`, Studio at `/studio`
+- [2026-03-05] Blog wired to Sanity: `/blog` fetches live posts, `/blog/[slug]` renders PortableText
+- [2026-03-05] Replaced all emoji icons with flat stroke SVGs (`components/Icons.tsx`)
+- [2026-03-05] Nav logo: theme-aware swap (dark/light variants), scroll-shrink effect (220→175px)
 
 ## Open Questions / Blockers
 
-- About page: Wei Yu's bio/background not yet written — build page with placeholder copy for now
-- Sanity project: needs to be created (run `npm create sanity@latest` in project)
-- Vercel: needs Wei Yu to connect GitHub repo and domain after build
+- About page: Wei Yu's bio/background not yet written — page has placeholder copy
+- **Vercel deploy failing**: `.env.local` is gitignored so Vercel has no Sanity env vars. Add `NEXT_PUBLIC_SANITY_PROJECT_ID=tw557kag` and `NEXT_PUBLIC_SANITY_DATASET=production` in Vercel project settings → Environment Variables before deploying.
+- Vercel: needs Wei Yu to connect domain (awareone.co.nz) after first successful deploy
 
 ---
 
-*Last updated: 2026-03-03 by Sparkle ✨*
+*Last updated: 2026-03-05*
