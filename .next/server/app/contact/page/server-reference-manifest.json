@@ -1,0 +1,35 @@
+{
+  "node": {
+    "403677fbb5396d90eab36676053e635c966c8dbc2a": {
+      "workers": {
+        "app/contact/page": {
+          "moduleId": 94362,
+          "async": false,
+          "exportedName": "revalidateSyncTags",
+          "filename": "node_modules/next-sanity/dist/live/server-actions/index.js"
+        }
+      },
+      "layer": {
+        "app/contact/page": "action-browser"
+      },
+      "exportedName": "revalidateSyncTags",
+      "filename": "node_modules/next-sanity/dist/live/server-actions/index.js"
+    },
+    "4021a81dc0db70832f49a6ee06e665ac617e8418a3": {
+      "workers": {
+        "app/contact/page": {
+          "moduleId": 94362,
+          "async": false,
+          "exportedName": "setPerspectiveCookie",
+          "filename": "node_modules/next-sanity/dist/live/server-actions/index.js"
+        }
+      },
+      "layer": {
+        "app/contact/page": "action-browser"
+      },
+      "exportedName": "setPerspectiveCookie",
+      "filename": "node_modules/next-sanity/dist/live/server-actions/index.js"
+    }
+  },
+  "edge": {}
+}

@@ -26,10 +26,10 @@
 - [x] Pillar copy saved → `content/pillars/operate.md`, `source.md`, `build.md`
 
 ### Up Next — Build the Website
-- [ ] Init Next.js 14 (App Router) + Tailwind CSS
-- [ ] Recreate homepage from `public/index.html` mockup
-- [ ] Build remaining pages (see Page List below)
-- [ ] Set up Sanity CMS for blog
+- [x] Init Next.js (App Router) + Tailwind CSS
+- [x] Recreate homepage from `public/index.html` mockup
+- [x] Build remaining pages (services, operate, source, build, about, contact, blog, sitemap, robots)
+- [x] Set up Sanity CMS for blog
 - [ ] Deploy to Vercel + connect awareone.co.nz
 
 ---

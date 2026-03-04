@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --teal: #00A99D;
+  --teal-l: #00C4B7;
+  --teal-p: #EEF8F7;
+  --slate: #1E2B3C;
+  --slate-gray: #6B7C93;
+  --bg: #ffffff;
+  --bg-soft: #F8FAFB;
+  --bg-card: #ffffff;
+  --text: #1E2B3C;
+  --text-2: #6B7C93;
+  --border: #E8EDF2;
+  --nav-bg: rgba(255, 255, 255, 0.92);
+  --shadow: 0 4px 24px rgba(30, 43, 60, 0.08);
+  --cta-bg: #1E2B3C;
+  --foot-bg: #0D1620;
+}
+
+[data-theme="dark"] {
+  --teal-p: rgba(0, 169, 157, 0.13);
+  --bg: #0D1520;
+  --bg-soft: #111D2C;
+  --bg-card: #172030;
+  --text: #EDF2F7;
+  --text-2: #7A90AA;
+  --border: rgba(255, 255, 255, 0.07);
+  --nav-bg: rgba(13, 21, 32, 0.94);
+  --shadow: 0 4px 28px rgba(0, 0, 0, 0.4);
+  --cta-bg: #090F1A;
+  --foot-bg: #070D18;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.3s, color 0.3s;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-block px-5 py-2.5 rounded-btn text-sm font-semibold text-white transition-all duration-200 cursor-pointer;
+    background: var(--teal);
+  }
+  .btn-primary:hover {
+    background: var(--teal-l);
+    transform: translateY(-1px);
+  }
+
+  .btn-ghost {
+    @apply inline-block px-5 py-2.5 rounded-btn text-sm font-semibold transition-all duration-200 cursor-pointer;
+    border: 1.5px solid var(--border);
+    color: var(--text);
+    background: transparent;
+  }
+  .btn-ghost:hover {
+    border-color: var(--teal);
+    color: var(--teal);
+  }
+
+  .section-tag {
+    @apply inline-block text-[11px] font-bold tracking-widest uppercase mb-4;
+    color: var(--teal);
+  }
+
+  .card {
+    @apply rounded-card p-6 transition-all duration-300;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+  .card:hover {
+    transform: translateY(-3px);
+    border-color: var(--teal);
+  }
+}
