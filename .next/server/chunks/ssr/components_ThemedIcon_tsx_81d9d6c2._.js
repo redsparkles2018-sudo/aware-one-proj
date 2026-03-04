@@ -1,3 +1,0 @@
-module.exports=[88426,a=>{"use strict";var b=a.i(87924),c=a.i(71987),d=a.i(72131);function e({lightSrc:a,darkSrc:e,alt:f,width:g=40,height:h=40,style:i,className:j}){let[k,l]=(0,d.useState)(!0);return(0,d.useEffect)(()=>{let a=()=>{l("light"!==document.documentElement.getAttribute("data-theme"))};a();let b=new MutationObserver(a);return b.observe(document.documentElement,{attributes:!0,attributeFilter:["data-theme"]}),()=>b.disconnect()},[]),(0,b.jsx)(c.default,{src:k?e:a,alt:f,width:g,height:h,style:i,className:j})}a.s(["default",()=>e])}];
-
-//# sourceMappingURL=components_ThemedIcon_tsx_81d9d6c2._.js.map

@@ -1,1 +1,0 @@
-(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,53923,e=>{"use strict";var t=e.i(18566),u=e.i(71645);function r(){let e=(0,t.useRouter)(),[r,s]=(0,u.useReducer)(()=>!0,!1);return(0,u.useEffect)(()=>{r||(s(),e.refresh())},[r,e]),null}r.displayName="RefreshOnMount",e.s(["default",()=>r])}]);
