@@ -1,133 +1,189 @@
 # Aware One — Project Memory
 
-> This file is the single source of truth for this project.
-> Read it at the start of every Claude Code session.
-> Update it as decisions are made and tasks are completed.
+> **READ THIS FIRST before doing anything.**
+> This is the single source of truth. Update it as you make decisions and complete tasks.
 
 ---
 
 ## Project Identity
 
-- **Business name:** Aware One
+- **Business:** Aware One — B2B consultancy for NZ SMBs
 - **Trading name for:** Existing NZ registered company (Wei Yu)
-- **Type:** B2B consultancy for NZ SMBs
 - **Tagline:** *"One partner. Every advantage."*
-- **Owner:** Wei Yu (based in Auckland, NZ)
+- **Contact:** info@awareone.co.nz
+- **Domains:** awareone.co.nz + awareone.nz (both registered)
+- **Owner:** Wei Yu (Auckland, NZ)
 
 ---
 
-## Key Decisions Made
+## 🚦 Current Status
 
-- [2026-03-03] Brand name chosen: **Aware One**
-- [2026-03-03] Domains registered: `awareone.co.nz` + `awareone.nz` ✅
-- [2026-03-03] Brand locked — see BRAND.md for full spec
-- [2026-03-03] Tech stack agreed: Next.js + Tailwind + Sanity CMS + Vercel
-- [2026-03-03] Three service pillars: **Operate / Source / Build**
-- [2026-03-03] Website focus: SEO-first, blog-driven content strategy
-- [2026-03-03] Hosting: Vercel free tier to launch, upgrade when needed
-- [2026-03-03] Email: Zoho Mail (free) to start → Google Workspace later
+### Done
+- [x] Brand locked → see `BRAND.md` for full spec
+- [x] All logo + icon SVG files → `public/brand/`
+- [x] Homepage mockup (HTML) → `public/index.html` ← **use this as design reference**
+- [x] Homepage copy written (pain-point led, Mission Control concept)
+- [x] Pillar copy saved → `content/pillars/operate.md`, `source.md`, `build.md`
 
----
-
-## Service Pillars
-
-### Operate
-Improve business operations using latest AI tools — automation, workflow, process improvement.
-
-### Source
-Help businesses set up overseas logistics and sourcing (China/Asia focus).
-
-### Build
-Product design, prototyping, custom apps and AI-integrated workflows.
+### Up Next — Build the Website
+- [ ] Init Next.js 14 (App Router) + Tailwind CSS
+- [ ] Recreate homepage from `public/index.html` mockup
+- [ ] Build remaining pages (see Page List below)
+- [ ] Set up Sanity CMS for blog
+- [ ] Deploy to Vercel + connect awareone.co.nz
 
 ---
 
 ## Tech Stack
 
-| Layer | Choice | Notes |
-|-------|--------|-------|
-| Framework | Next.js (App Router) | SSG/ISR for SEO |
-| Styling | Tailwind CSS | |
-| Hosting | Vercel | Free tier |
-| CMS | Sanity | Blog + content |
-| Forms | React Hook Form + Resend/Formspree | Contact form |
-| Analytics | GA4 + Google Search Console | |
-| Email | Zoho Mail → Google Workspace | `wei@awareone.co.nz` |
+| Layer | Choice |
+|-------|--------|
+| Framework | **Next.js 14** (App Router) |
+| Styling | **Tailwind CSS** |
+| CMS | **Sanity** (blog + content) |
+| Hosting | **Vercel** (free tier) |
+| Forms | Contact form → mailto or Resend |
+| Analytics | GA4 (add later) |
+| Email | info@awareone.co.nz |
 
 ---
 
-## Sitemap
+## Design System (from BRAND.md)
 
+### Colours
 ```
-/ ................. Home
-/services ......... Services overview
-/services/operate . Operate pillar page
-/services/source .. Source pillar page
-/services/build ... Build pillar page
-/blog ............. Blog index
-/blog/[slug] ...... Individual posts
-/about ............ About page
-/contact .......... Contact + Calendly
+--slate:   #1E2B3C   ← primary, headlines
+--teal:    #00A99D   ← accent, CTAs, links
+--teal-l:  #00C4B7   ← hover states
+--teal-p:  #EEF8F7   ← light tint (use rgba(0,169,157,0.13) in dark mode)
+--gray:    #6B7C93   ← body text
 ```
 
----
-
-## Current Status
-
-- [x] Business concept defined
-- [x] Brand name finalised: Aware One
-- [x] Tech stack chosen
-- [x] Full plan written → `PLAN.md`
-- [x] Domains registered: awareone.co.nz + awareone.nz ✅
-- [x] Brand locked → `BRAND.md` ✅ (colours, logo, typography, voice)
-- [ ] Logo files created (SVG/PNG) — brief designer or Figma
-- [ ] Email set up (wei@awareone.co.nz via Zoho)
-- [ ] Website copy written
-- [ ] Website built
-- [ ] Blog posts written
-- [ ] Launched
-
----
-
-## Content Plan
-
-**First 10 blog posts planned** (see PLAN.md for full titles)
-- Pillar 1 (Operate): AI tools, automation, process
-- Pillar 2 (Source): Sourcing from Asia, import logistics
-- Pillar 3 (Build): Custom software, apps, prototyping
-
-**Cadence:** 2 posts/month minimum
-
----
-
-## File Structure (planned)
-
+### Dark mode (DEFAULT — build dark-first)
 ```
-aware-one/
-├── MEMORY.md          ← this file (always read first)
-├── PLAN.md            ← full business & website plan
-├── app/               ← Next.js app directory
-├── components/        ← reusable UI components
-├── content/           ← static content / MDX (if not using Sanity)
-├── public/            ← assets, images, favicon
-├── sanity/            ← Sanity studio + schemas
-├── styles/            ← global CSS
-└── README.md          ← setup instructions
+--bg:      #0D1520
+--bg-soft: #111D2C
+--bg-card: #172030
+--text:    #EDF2F7
+--text-2:  #7A90AA
+--border:  rgba(255,255,255,0.07)
 ```
 
+### Typography
+- Font: **Inter** (Google Fonts) — weights 300, 400, 600, 700, 800
+- H1: 800, clamp(34px, 5.5vw, 56px), tracking -0.03em
+- H2: 800, clamp(26px, 4.5vw, 40px), tracking -0.02em
+- Body: 400, 15–17px, line-height 1.75
+
+### Logo files
+All in `public/brand/`:
+- `logo-combined.svg` — icon + wordmark (light bg)
+- `logo-combined-dark.svg` — icon + wordmark (dark bg) ← use in nav by default
+- `logo-wordmark.svg` — text only (light bg)
+- `logo-white.svg` — text only (dark bg)
+- `logo-icon.svg` — A¹ icon only
+- `favicon.svg` — browser favicon
+
+### Service icons
+- `icon-operate.svg` / `icon-operate-dark.svg`
+- `icon-source.svg` / `icon-source-dark.svg`
+- `icon-build.svg` / `icon-build-dark.svg`
+> Always use the `-dark` variants in dark mode context
+
 ---
 
-## Notes for Claude Code
+## Page List
 
-- Always read this file first before making any changes
-- Update the "Current Status" checklist as tasks complete
-- Update "Key Decisions Made" when anything significant is decided
-- The website must be SEO-optimised — every page needs proper meta tags, OG images, and semantic HTML
-- Performance matters for SEO — aim for 90+ Lighthouse score
-- Mobile-first design — most SMB owners browse on phones
-- Blog posts should target specific keywords — check PLAN.md for planned topics
-- Keep components modular — pillar pages share the same layout pattern
+### `/` — Homepage
+**Reference: `public/index.html`** ← pixel-accurate design reference. Recreate this in Next.js/Tailwind.
+
+Sections (in order):
+1. **Nav** — logo + links + "Free call" CTA + theme toggle
+2. **Hero** — "Focus on your ideas. We run the rest." + 3 stat cards
+3. **Trust bar** — 4 trust signals
+4. **Mission Control section** — "You're the commander" + flow diagram + quote
+5. **Services grid** — 3 cards (Operate / Source / Build), 5 bullets each
+6. **Why Aware One** — 3 numbered points
+7. **CTA banner** — "Ready to take command?"
+8. **Footer**
+
+### `/services/operate` — Operate landing page
+Use `content/pillars/operate.md` for copy.
+Expand into full page: hero, pain points, what we do, process steps, CTA.
+
+### `/services/source` — Source landing page
+Use `content/pillars/source.md` for copy.
+
+### `/services/build` — Build landing page
+Use `content/pillars/build.md` for copy.
+
+### `/about` — About page
+- Who is Wei Yu / Aware One
+- Why we exist
+- NZ-based, globally connected
+- Simple, personal, no corporate fluff
+- CTA to book a call
+
+### `/contact` — Contact page
+- Simple form (name, email, message, which service)
+- info@awareone.co.nz
+- "Book a free 30-min strategy call" framing
+
+### `/blog` — Blog index
+- Sanity CMS powered
+- Show latest posts in grid
+- Categories: Operate / Source / Build
+
+### `/blog/[slug]` — Blog post
+- Full article layout
+- Author, date, category
+- Related posts
 
 ---
 
-*Last updated: 2026-03-03*
+## Key Implementation Notes
+
+1. **Dark mode is DEFAULT** — `<html data-theme="dark">` on load, theme stored in localStorage
+2. **Theme-aware images** — logos and icons have light/dark variants. Use Next.js `<Image>` with conditional src based on theme. See the mockup JS for the swap logic.
+3. **Responsive** — mobile-first. Nav collapses on <640px. Services grid: 3-col desktop → 2-col tablet → 1-col mobile.
+4. **Hover effects** — cards lift on hover (`translateY(-3px)`) + teal bottom border slides in. Keep these.
+5. **The Mission Control flow diagram** — horizontal flow: Source → Operate → Build → Market → Growth. Last step has teal highlight.
+6. **SEO** — every page needs `<title>`, `<meta description>`, OG tags. Use Next.js metadata API.
+7. **Performance** — target 90+ Lighthouse. Use Next.js Image for all images. Lazy load below fold.
+8. **Font** — load Inter via `next/font/google` (not a `<link>` tag) for performance.
+9. **Commit often** — commit after each page or major component is done.
+
+---
+
+## 🔄 Keeping Sparkle in the Loop
+
+Sparkle (the AI assistant) is watching this project. After completing each major task, **update the status checklist above** and commit. Sparkle reads this file to track progress.
+
+Specifically update:
+- Tick off items in "Up Next" as they're done
+- Add any new decisions to "Key Decisions Made" below
+- Note any blockers or open questions at the bottom
+
+---
+
+## Key Decisions Made
+
+- [2026-03-03] Brand name: **Aware One** (trading name)
+- [2026-03-03] Domains registered: awareone.co.nz + awareone.nz ✅
+- [2026-03-03] Brand colours: Deep Slate #1E2B3C + Teal #00A99D
+- [2026-03-03] Logo: "AWARE 1" wordmark + A¹ icon
+- [2026-03-03] Tech stack: Next.js 14 + Tailwind + Sanity + Vercel
+- [2026-03-03] Dark mode is primary/default theme
+- [2026-03-03] Contact email: info@awareone.co.nz (Wei Yu setting up)
+- [2026-03-03] Homepage copy locked — Mission Control concept is the big idea
+- [2026-03-03] Detailed pillar copy saved in `content/pillars/` for individual landing pages
+
+## Open Questions / Blockers
+
+- About page: Wei Yu's bio/background not yet written — build page with placeholder copy for now
+- Sanity project: needs to be created (run `npm create sanity@latest` in project)
+- Vercel: needs Wei Yu to connect GitHub repo and domain after build
+
+---
+
+*Last updated: 2026-03-03 by Sparkle ✨*
