@@ -2,6 +2,17 @@ import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import ThemedIcon from "@/components/ThemedIcon";
+import {
+  IconMapPin,
+  IconGlobe,
+  IconCpu,
+  IconZap,
+  IconPackage,
+  IconSettings,
+  IconCode,
+  IconMegaphone,
+  IconTrendingUp,
+} from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "Aware One — One partner. Every advantage.",
@@ -34,18 +45,18 @@ const statCards = [
 ];
 
 const trustItems = [
-  { icon: "🇳🇿", text: "New Zealand based", sub: "Auckland, NZ" },
-  { icon: "🌏", text: "Asia supply chain network", sub: "China, Vietnam, Taiwan" },
-  { icon: "🤖", text: "AI-first approach", sub: "Real automation, real results" },
-  { icon: "⚡", text: "Fast to implement", sub: "Results in weeks, not months" },
+  { icon: IconMapPin, text: "New Zealand based", sub: "Auckland, NZ" },
+  { icon: IconGlobe, text: "Asia supply chain network", sub: "China, Vietnam, Taiwan" },
+  { icon: IconCpu, text: "AI-first approach", sub: "Real automation, real results" },
+  { icon: IconZap, text: "Fast to implement", sub: "Results in weeks, not months" },
 ];
 
 const flowSteps = [
-  { icon: "🌏", name: "Source", desc: "Products & supply", highlight: false },
-  { icon: "⚙️", name: "Operate", desc: "Systems & automation", highlight: false },
-  { icon: "🛠️", name: "Build", desc: "Software & tools", highlight: false },
-  { icon: "📣", name: "Market", desc: "Campaigns & SEO", highlight: false },
-  { icon: "📈", name: "Growth", desc: "You, in command", highlight: true },
+  { icon: IconPackage, name: "Source", desc: "Products & supply", highlight: false },
+  { icon: IconSettings, name: "Operate", desc: "Systems & automation", highlight: false },
+  { icon: IconCode, name: "Build", desc: "Software & tools", highlight: false },
+  { icon: IconMegaphone, name: "Market", desc: "Campaigns & SEO", highlight: false },
+  { icon: IconTrendingUp, name: "Growth", desc: "You, in command", highlight: true },
 ];
 
 const services = [
@@ -315,7 +326,9 @@ export default function HomePage() {
             key={item.text}
             style={{ display: "flex", alignItems: "center", gap: 9 }}
           >
-            <span style={{ fontSize: 17 }}>{item.icon}</span>
+            <span style={{ color: "var(--teal)", flexShrink: 0, display: "flex" }}>
+              <item.icon size={18} />
+            </span>
             <div>
               <div style={{ fontSize: 13, fontWeight: 600 }}>{item.text}</div>
               <div style={{ fontSize: 11, color: "var(--text-2)" }}>{item.sub}</div>
@@ -437,7 +450,16 @@ export default function HomePage() {
                     minWidth: 140,
                   }}
                 >
-                  <div style={{ fontSize: 22, marginBottom: 8 }}>{step.icon}</div>
+                  <div
+                    style={{
+                      marginBottom: 10,
+                      display: "flex",
+                      justifyContent: "center",
+                      color: step.highlight ? "var(--teal-l)" : "rgba(255,255,255,0.75)",
+                    }}
+                  >
+                    <step.icon size={24} />
+                  </div>
                   <div
                     style={{
                       fontSize: 13,

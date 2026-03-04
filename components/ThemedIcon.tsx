@@ -11,6 +11,7 @@ interface ThemedIconProps {
   height?: number;
   style?: React.CSSProperties;
   className?: string;
+  priority?: boolean;
 }
 
 export default function ThemedIcon({
@@ -21,6 +22,7 @@ export default function ThemedIcon({
   height = 40,
   style,
   className,
+  priority,
 }: ThemedIconProps) {
   const [isDark, setIsDark] = useState(true); // default dark
 
@@ -47,6 +49,7 @@ export default function ThemedIcon({
       height={height}
       style={style}
       className={className}
+      priority={priority}
     />
   );
 }

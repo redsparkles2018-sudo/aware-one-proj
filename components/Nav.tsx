@@ -1,10 +1,19 @@
 "use client";
 
-import Image from "next/image";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
+import ThemedIcon from "./ThemedIcon";
 
 export default function Nav() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <nav
       style={{
@@ -15,21 +24,27 @@ export default function Nav() {
         backdropFilter: "blur(14px)",
         borderBottom: "1px solid var(--border)",
         padding: "0 24px",
-        height: 64,
+        height: scrolled ? 64 : 76,
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
         gap: 16,
+        transition: "height 0.35s ease",
       }}
     >
       <Link href="/" className="nav-logo" style={{ display: "flex", alignItems: "center" }}>
-        {/* Dark variant shown by default; JS swaps if needed */}
-        <Image
-          src="/brand/logo-combined-dark.svg"
+        <ThemedIcon
+          lightSrc="/brand/logo-combined.svg"
+          darkSrc="/brand/logo-combined-dark.svg"
           alt="Aware One"
-          width={120}
-          height={34}
+          width={220}
+          height={47}
           priority
+          style={{
+            width: scrolled ? 175 : 220,
+            height: scrolled ? 37 : 47,
+            transition: "width 0.35s ease, height 0.35s ease",
+          }}
         />
       </Link>
 
