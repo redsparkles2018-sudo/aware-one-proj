@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Aware One is a NZ-based B2B consultancy founded by Wei Yu. One partner — operations, sourcing, and technology — for NZ businesses ready to modernise.",
+    "Aware One is a NZ-based B2B consultancy. One partner — operations, sourcing, and technology — for NZ businesses ready to modernise.",
 };
 
 export default function AboutPage() {
@@ -86,11 +86,10 @@ export default function AboutPage() {
                 marginBottom: 14,
               }}
             >
-              Aware One is led by Wei Yu, based in Auckland, New Zealand. With a
-              background spanning business operations, technology, and Asia supply
-              chains, Wei built Aware One to give NZ SMBs access to the kind of
-              end-to-end capability that was previously only available to large
-              businesses.
+              Aware One is a small team based in Auckland, New Zealand. We bring
+              20 years of combined experience across business development,
+              management, sales &amp; marketing, ecommerce, logistics management,
+              and both B2B and B2C businesses — including F2C projects.
             </p>
             <p
               style={{
@@ -99,8 +98,10 @@ export default function AboutPage() {
                 color: "var(--text-2)",
               }}
             >
-              {/* Placeholder — Wei Yu's full bio to be added */}
-              More about Wei&apos;s background coming soon.
+              We built Aware One to give NZ SMBs access to the kind of
+              end-to-end capability that was previously only available to large
+              businesses — without the overhead of multiple agencies or full-time
+              hires.
             </p>
           </div>
           <div>
